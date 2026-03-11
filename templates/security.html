@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>WTSA - Segurança</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo3-icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="menu-title">MENU PRINCIPAL</div>
+            <nav class="nav">
+                <a href="{{ url_for('dashboard') }}" class="nav-item">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="9"></rect>
+                            <rect x="14" y="3" width="7" height="5"></rect>
+                            <rect x="14" y="12" width="7" height="9"></rect>
+                            <rect x="3" y="16" width="7" height="5"></rect>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+
+                <a href="{{ url_for('users') }}" class="nav-item">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="3"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a3 3 0 0 1 0 5.74"></path>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Usuários</span>
+                </a>
+
+                <a href="{{ url_for('resources') }}" class="nav-item">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 7.5L12 3l9 4.5-9 4.5z"></path>
+                            <path d="M3 16.5L12 12l9 4.5-9 4.5z"></path>
+                            <path d="M12 12v9"></path>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Recursos</span>
+                </a>
+
+                <a href="{{ url_for('security') }}" class="nav-item active">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Segurança</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a class="logout-btn" href="login.html">
+                <span class="logout-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </span>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <button id="sidebar-toggle" class="top-toggle-btn" aria-label="Alternar menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="6" height="18" rx="1"></rect>
+                        <path d="M14 8l4 4-4 4"></path>
+                    </svg>
+                </button>
+
+                <div class="logo-mark">
+                    <img src="../static/img/logo3.png" alt="Wayne Enterprises Logo">
+                </div>
+
+                <div class="header-text">
+                    <div class="system-sigla">WTSA</div>
+                    <div class="system-name">WAYNETECH SECUREACCESS</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- TÍTULO E AÇÕES -->
+            <section class="page-header">
+                <h1 class="page-title">Segurança</h1>
+                <p class="page-subtitle">Monitoramento de incidentes e alertas críticos</p>
+            </section>
+
+            <!-- BOTÕES DE AÇÃO SUPERIORES -->
+            <section class="security-actions">
+                <a href="{{ url_for('new_incident') }}" class="btn primary">
+                    <span class="btn-icon">
+                        <!-- alert-circle plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            <line x1="18" y1="6" x2="22" y2="6"></line>
+                        </svg>
+                    </span>
+                    <span>Novo incidente</span>
+                </a>
+
+                <button class="btn ghost">
+                    <span class="btn-icon">
+                        <!-- shield-check -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </span>
+                    <span>Aplicar políticas</span>
+                </button>
+            </section>
+
+            <!-- TABELAS DE INCIDENTES E ALERTAS -->
+            <section class="security-grid">
+                <!-- INCIDENTES -->
+                <div class="security-card">
+                    <div class="security-card-header">
+                        <h2>Incidentes recentes</h2>
+                        <span class="security-count">3 incidentes abertos</span>
+                    </div>
+
+                    <table class="security-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tipo</th>
+                                <th>Local</th>
+                                <th>Severidade</th>
+                                <th>Status</th>
+                                <th>Última atualização</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for inc in incidentes %}
+                            <tr>
+                                <td>{{ inc.id }}</td>
+                                <td>
+                                    {% if inc.tipo_movimentacao == 'cadastrado' %}
+                                        Cadastro de recurso
+                                    {% elif inc.tipo_movimentacao == 'atualizado' %}
+                                        Atualização de recurso
+                                    {% elif inc.tipo_movimentacao == 'desativado' %}
+                                        Desativação de recurso
+                                    {% else %}
+                                        {{ inc.tipo_movimentacao }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ inc.localizacao or '-' }}</td>
+                                <td>
+                                    {% if inc.tipo_movimentacao == 'desativado' %}
+                                        <span class="pill pill-danger">Alto</span>
+                                    {% elif inc.tipo_movimentacao == 'atualizado' %}
+                                        <span class="pill pill-warning">Médio</span>
+                                    {% else %}
+                                        <span class="pill pill-success">Baixo</span>
+                                    {% endif %}
+                                </td>
+                                <td><span class="pill pill-success">Registrado</span></td>
+                                <td>{{ inc.data_hora.strftime('%d/%m/%Y %H:%M') if inc.data_hora.__class__.__name__ == 'datetime' else inc.data_hora }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ALERTAS -->
+                <div class="security-card">
+                    <div class="security-card-header">
+                        <h2>Alertas de segurança</h2>
+                        <span class="security-count">5 alertas ativos</span>
+                    </div>
+
+                    <table class="security-table">
+                        <thead>
+                            <tr>
+                                <th>Alerta</th>
+                                <th>Origem</th>
+                                <th>Categoria</th>
+                                <th>Prioridade</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for a in alertas %}
+                            <tr>
+                                <td>
+                                    {% if a.tipo_acao == 'login_falha' %}
+                                        Falha de autenticação
+                                    {% elif a.tipo_acao == 'acesso_negado' %}
+                                        Acesso negado
+                                    {% else %}
+                                        {{ a.tipo_acao }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ a.usuario_nome or 'Usuário desconhecido' }}</td>
+                                <td>Autenticação</td>
+                                <td>
+                                    {% if a.tipo_acao == 'acesso_negado' %}
+                                        <span class="pill pill-danger">Alta</span>
+                                    {% else %}
+                                        <span class="pill pill-warning">Média</span>
+                                    {% endif %}
+                                </td>
+                                <td><span class="pill pill-warning">Pendente</span></td>
+                                <td>{{ a.data_hora.strftime('%d/%m/%Y %H:%M') if a.data_hora.__class__.__name__ == 'datetime' else a.data_hora }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <span>©2026 Wayne Enterprises. All rights reserved</span>
+        </footer>
+    </main>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("sidebar-toggle");
+    const app = document.querySelector(".app");
+    if (!toggleBtn || !app) return;
+    toggleBtn.addEventListener("click", () => {
+        app.classList.toggle("sidebar-collapsed");
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: Helvetica;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: rgb(29, 29, 29);
+    color: aliceblue;
+    background-image: url(../img/background-upscale.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.h1-1{
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.h1-2{
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+    letter-spacing: 3px;
+}
+
+header{
+    background-color: #101010;
+    padding: 10px 0px;
+    margin-top: 0px;
+    text-align: center;
+    width: 100%;  
+    margin-bottom: 0px;
+    border-radius: 0px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo{
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    max-width: 75px;
+    height: auto;
+    z-index: 10;
+}
+
+h1, body{
+    margin: 0;
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+main{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background-color: #1f1f1f;
+    width: 300px;
+    height: 330px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-color: #3b3b3b;
+    border-style: solid;
+    border-width: 1px;
+    opacity: 0.98;
+}
+
+.user-label{
+    padding-top: 15px;
+}
+
+.user-label, .password-label{
+    padding-bottom: 5px;
+}
+
+input{
+    width: 250px;
+    max-width: 235px;
+    padding-right: 0px;
+    padding-left: 10px;
+    font-family: "Saira", sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    height: 30px;
+    border: 0px solid rgb(175,175,175);
+    border-radius: 7px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+input:focus{
+    color: white;
+}
+
+input::placeholder{
+    color: rgb(175, 175, 175);
+    opacity: 1;
+}
+
+.user{
+    width: 100%;
+    max-width: 300px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.password{  
+    width: 100%;
+    max-width: 300px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+button, .btn a {
+    margin-left: 0px;
+    margin-top: 5px;
+    border-radius: 8px;
+    height: 30px;
+    width: 246px;
+    box-shadow:2px 2px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-family: "Saira", sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    display: inline-flex;           /* make anchors respect width/height */
+    align-items: center;            /* center text vertically */
+    justify-content: center;        /* center text horizontally */
+    text-decoration: none;          /* remove underline from links */
+    color: inherit;                 /* use color from individual classes */
+} /* no default background; classes set it */
+
+
+.enviar::after {
+    content: ''; /* Necessário para o pseudo-elemento */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3a3a3a; /* Cor da linha */
+    transform: scaleX(0); /* Começa invisível */
+    transform-origin: bottom right; /* O efeito de animação acontece da direita para a esquerda */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.limpar::after {
+    content: ''; /* Necessário para o pseudo-elemento */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff; /* Cor da linha */
+    transform: scaleX(0); /* Começa invisível */
+    transform-origin: bottom right; /* O efeito de animação acontece da direita para a esquerda */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.register::after {
+    content: ''; /* Necessário para o pseudo-elemento */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff; /* Cor da linha */
+    transform: scaleX(0); /* Começa invisível */
+    transform-origin: bottom right; /* O efeito de animação acontece da direita para a esquerda */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+button:hover,
+.btn a:hover {
+    cursor: pointer;
+}
+
+button:hover::after, 
+.btn a:hover::after {
+    transform: scaleX(1); /* A linha aparece ao passar o mouse */
+}
+
+.enviar, .register{
+    border: 1px solid white;
+}
+
+.enviar{
+    margin-top: 5px;
+    color: black !important;        /* force black text even if inherited white */
+    background-color: white;       /* keep white background for enviar */
+}
+
+
+.register{
+    margin-bottom: 5px;
+    background-color: #1f1f1f !important;  /* override default anchor if needed */
+    color: white;
+}
+
+.limpar{
+    border: 1px solid white;
+    background-color:#3a3a3a;
+    color: white;
+}
+
+footer{
+    background-color: #101010;
+    padding: 0px 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+}
+
+/* para mobile/celular */
+@media(max-width: 600px){
+    main{
+        padding-top: 15px; 
+        font-size: larger;
+    }
+
+    header{
+        margin-top: 80px;
+    }
+
+    form{
+        height: 65vh;
+        gap: 50px;
+    }
+
+    input{
+        margin-left: 13px;
+        max-width: 220px;
+        height: 45px;
+        border-radius: 18px;
+    }
+
+    :before{
+        margin-left: 20px;
+    }
+
+    button,
+    .btn a {
+        height: 45px;
+        margin-top: 10px;
+    }
+
+
+}
+
+/* para tablets */
+@media(min-width: 601px) and (max-width: 768px){
+    main{
+        padding-top: 15px;
+    }
+}
+
+/* para desktop */
+@media(min-width: 1024px){
+    
+}

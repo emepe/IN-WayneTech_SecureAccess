@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WTSA</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo3-icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+    <body>
+        <header>
+            <img class="logo" src="{{ url_for('static', filename='img/logo3.png') }}" alt="logo">
+            <h1 class="h1-1">WTSA</h1>
+            <h1 class="h1-2">WayneTech SecureAccess</h1>
+        </header>
+        <main>
+            <!-- <img class="background" src="../../Wayne Security Management Access/background.png" alt="background-img"> -->
+            <form action="{{ url_for('login') }}" method="post">
+                 <section class="user">
+                     <div class="user-label">
+                         <label for="usuario">Insert your user:</label>
+                     </div>
+                     <div class="user-input">
+                         <input type="email" name="email" id="email" placeholder="user@wayneenterprises.com">
+                     </div>
+                 </section>
+                 <section class="password">
+                     <div class="password-label">
+                         <label for="senha">Insert your password:</label>
+                     </div>
+                     <div class="password-input">
+                         <input type="password" name="senha" id="senha" placeholder="Password">
+                     </div>
+                 </section>
+                 <section class="btn">
+                     <button class="enviar" type="submit">SUBMIT</button>
+                     <button class="limpar" type="reset">RESET</button>
+                     <a class="register" href="register.html">REGISTER</a>
+                </section>
+            </form>
+        </main>
+        <footer>
+            <p>©2026 Wayne Enterprises. All rights reserved</p>
+        </footer>
+    </body>
+</html>

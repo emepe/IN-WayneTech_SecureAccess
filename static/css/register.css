@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: Helvetica;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: rgb(29, 29, 29);
+    color: aliceblue;
+    background-image: url(../img/background-upscale.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.h1-1{
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.h1-2{
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    letter-spacing: 3px;
+}
+
+header{
+    background-color: #101010;
+    padding: 10px 0px;
+    margin-top: 0px;
+    text-align: center;
+    width: 100%;  
+    margin-bottom: 0px;
+    border-radius: 0px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo{
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    width: 75px;
+    height: auto;
+    z-index: 10;
+}
+
+h1, body{
+    margin: 0;
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+main{
+    flex: 1;
+}
+
+.h3-warning{
+    display: flex;               /* column layout: header row on top, text below */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;                   /* space between header row and text */
+    font-size:20px;
+    background-color: #1f1f1f;
+    color: white;
+    margin-top: 90px;
+    width: 600px; 
+    padding-left: 30px;              /* add some internal spacing */
+    padding-bottom: 40px;
+    padding-top: 15px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    opacity: 0.98;
+    border-color: #3b3b3b;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+.h3-warning .titulo{
+    display: flex;               /* row layout for icon + title */
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+img{
+    width: 40px;
+    height: auto;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+h3{
+    padding-top: 3px;
+    font-weight: 400;
+}
+
+.p-warning{
+    font-size: 16px;
+    font-weight: 200;
+    padding-left: 10px;
+}
+
+
+
+footer{
+    background-color: #101010;
+    padding: 0px 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+}

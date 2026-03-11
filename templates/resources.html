@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>WTSA - Recursos</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo3-icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="menu-title">MENU PRINCIPAL</div>
+            <nav class="nav">
+                <a href="{{ url_for('dashboard') }}" class="nav-item">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="9"></rect>
+                            <rect x="14" y="3" width="7" height="5"></rect>
+                            <rect x="14" y="12" width="7" height="9"></rect>
+                            <rect x="3" y="16" width="7" height="5"></rect>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+
+                <a href="{{ url_for('users') }}" class="nav-item">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="3"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a3 3 0 0 1 0 5.74"></path>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Usuários</span>
+                </a>
+
+                <a href="{{ url_for('resources') }}" class="nav-item active">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 7.5L12 3l9 4.5-9 4.5z"></path>
+                            <path d="M3 16.5L12 12l9 4.5-9 4.5z"></path>
+                            <path d="M12 12v9"></path>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Recursos</span>
+                </a>
+
+                <a href="{{ url_for('security') }}" class="nav-item">
+                    <span class="nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Segurança</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a class="logout-btn" href="{{ url_for('login') }}">
+                <span class="logout-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </span>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <button id="sidebar-toggle" class="top-toggle-btn" aria-label="Alternar menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="6" height="18" rx="1"></rect>
+                        <path d="M14 8l4 4-4 4"></path>
+                    </svg>
+                </button>
+
+                <div class="logo-mark">
+                    <img src="{{ url_for('static', filename='img/logo3.png') }}" alt="Wayne Enterprises Logo">
+                </div>
+
+                <div class="header-text">
+                    <div class="system-sigla">WTSA</div>
+                    <div class="system-name">WAYNETECH SECUREACCESS</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- TÍTULO E AÇÕES -->
+            <section class="page-header">
+                <h1 class="page-title">Recursos</h1>
+                <p class="page-subtitle">Gerencie equipamentos, veículos e dispositivos</p>
+            </section>
+
+            <!-- BOTÕES DE AÇÃO SUPERIORES -->
+            <section class="resources-actions">
+                <a href="{{ url_for('new_resource') }}" class="btn primary">
+                    <span class="btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                    </span>
+                    <span>Novo recurso</span>
+                </a>
+
+                <button class="btn ghost" type="button">
+                    <span class="btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="4 4 20 4 14 12 14 19 10 21 10 12 4 4"></polygon>
+                        </svg>
+                    </span>
+                    <span>Filtrar</span>
+                </button>
+            </section>
+
+            <!-- TABELA DE RECURSOS -->
+            <section class="resources-table-card">
+                <div class="resources-table-header">
+                    <h2>Inventário de recursos</h2>
+                    <span class="resources-count">
+                        {{ recursos|length }} recursos registrados
+                    </span>
+                </div>
+
+                <table class="resources-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Categoria</th>
+                            <th>Nome</th>
+                            <th>Localização</th>
+                            <th>Status</th>
+                            <th>Observações</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in recursos %}
+                        <tr>
+                            <td>{{ r.id }}</td>
+                            <td>
+                                {% if r.categoria == 'veiculo' %}
+                                    Veículo
+                                {% elif r.categoria == 'equipamento' %}
+                                    Equipamento
+                                {% elif r.categoria == 'dispositivo' %}
+                                    Dispositivo
+                                {% else %}
+                                    {{ r.categoria }}
+                                {% endif %}
+                            </td>
+                            <td>{{ r.nome }}</td>
+                            <td>{{ r.localizacao }}</td>
+                            <td>
+                                {% if r.status == 'ativo' %}
+                                    <span class="pill pill-success">Operacional</span>
+                                {% elif r.status == 'em_manutencao' %}
+                                    <span class="pill pill-warning">Manutenção</span>
+                                {% elif r.status == 'desativado' %}
+                                    <span class="pill pill-danger">Desativado</span>
+                                {% else %}
+                                    <span class="pill">{{ r.status }}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ r.observacoes_adicionais or '-' }}</td>
+                            <td style="display:flex; gap:6px;">
+                                <a href="{{ url_for('edit_resource', recurso_id=r.id) }}" class="icon-btn">Editar</a>
+                                <form method="post" action="{{ url_for('toggle_resource', recurso_id=r.id) }}">
+                                    <button type="submit" class="icon-btn">
+                                        {% if r.status == 'desativado' %}Reativar{% else %}Desativar{% endif %}
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <span>©2026 Wayne Enterprises. All rights reserved</span>
+        </footer>
+    </main>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("sidebar-toggle");
+    const app = document.querySelector(".app");
+    if (!toggleBtn || !app) return;
+    toggleBtn.addEventListener("click", () => {
+        app.classList.toggle("sidebar-collapsed");
+    });
+});
+</script>
+</body>
+</html>
