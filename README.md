@@ -1,4 +1,4 @@
-# IN-WAYNETECH SecureAccess
+# IN-WTSA WayneTech SecureAccess
 
 Sistema web full stack desenvolvido para o projeto final da Infinity School com o objetivo de gerenciar segurança, controle de acesso e recursos internos das Indústrias Wayne. A aplicação foi criada para permitir autenticação de usuários, controle por níveis de permissão, administração de recursos e visualização de informações relevantes em um dashboard. 
 

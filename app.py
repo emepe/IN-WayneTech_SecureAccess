@@ -19,7 +19,7 @@ def get_connection():
     )
 
 
-# ---------- DECORATOR PARA EXIGIR LOGIN ----------
+# -------- DECORATOR PARA EXIGIR LOGIN --------
 
 def login_required(view_func):
     @wraps(view_func)
