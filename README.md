@@ -1,4 +1,4 @@
-# IN-WTSA WayneTech SecureAccess
+# Projeto Final - Infinity School: WTSA WayneTech SecureAccess
 
 Sistema web full stack desenvolvido para o projeto final da Infinity School com o objetivo de gerenciar segurança, controle de acesso e recursos internos das Indústrias Wayne. A aplicação foi criada para permitir autenticação de usuários, controle por níveis de permissão, administração de recursos e visualização de informações relevantes em um dashboard. 
 
@@ -182,21 +182,6 @@ Além disso, a estrutura de arquivos CSS separados por páginas contribui para a
 - Melhorias de responsividade para dispositivos móveis.
 - Reforço das validações de segurança no backend.
 - Recuperação de senha e gerenciamento de sessão mais robusto.
-
-## Documentação
-
-Este projeto faz parte da entrega do projeto final e deve ser acompanhado de documentação detalhada, conforme solicitado no enunciado.
-
-A documentação pode incluir:
-
-- objetivo do sistema;
-- requisitos funcionais e não funcionais;
-- descrição da arquitetura;
-- modelagem do banco de dados;
-- explicação das telas;
-- fluxo de autenticação;
-- regras de permissão;
-- melhorias futuras.
 
 ## Considerações finais
 
