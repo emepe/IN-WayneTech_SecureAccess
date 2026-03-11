@@ -4,9 +4,16 @@ Sistema web full stack desenvolvido para o projeto final da Infinity School com 
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido com base na proposta de criar um **Sistema de Gerenciamento de Segurança** para as Indústrias Wayne. O sistema busca atender às necessidades de controle de acesso às áreas restritas, gestão de recursos internos e visualização de dados importantes relacionados à segurança e às atividades da empresa. 
+Este repositório contém o protótipo completo da aplicação, incluindo:
 
-A proposta do projeto exige uma aplicação web full stack que demonstre integração entre frontend, backend e banco de dados, além de apresentar um protótipo funcional acompanhado de documentação. 
+- backend em **Python/Flask** (`app.py`);
+- telas de login, registro e dashboard;
+- estilos CSS aplicados individualmente a cada página;
+- scripts SQL para criar/seedar a base de dados usada pelo protótipo.
+
+O objetivo principal é demonstrar uma aplicação web full‑stack funcional, com o servidor Flask servindo os templates e processando formulários.
+
+A proposta do projeto exige uma aplicação web full stack que demonstre integração entre interface, regras de negócio e banco de dados. Neste repositório só estão os componentes de frontend e os arquivos de banco; o código do servidor pode ser acrescentado separadamente (por exemplo em Flask ou Node.js). 
 
 ## Objetivos
 
@@ -14,7 +21,7 @@ A proposta do projeto exige uma aplicação web full stack que demonstre integra
 - Implementar autenticação e autorização com diferentes tipos de usuário.
 - Gerenciar recursos internos, como equipamentos, veículos e dispositivos de segurança.
 - Exibir um dashboard com informações relevantes sobre segurança, recursos e atividades.
-- Demonstrar a integração entre interface, regras de negócio e banco de dados. [file:2]
+- Demonstrar a integração entre interface, regras de negócio e banco de dados.
 
 ## Funcionalidades
 
@@ -29,12 +36,15 @@ A proposta do projeto exige uma aplicação web full stack que demonstre integra
 
 ## Perfis de acesso
 
-O sistema foi pensado para trabalhar com diferentes níveis de permissão, conforme solicitado no enunciado do projeto. Entre os perfis previstos estão funcionários, gerentes e administradores de segurança, cada um com responsabilidades e acessos específicos dentro da plataforma. [file:2]
+A interface contempla telas destinadas a distintos níveis de permissão — funcionalmente:
 
-Exemplo de organização de permissões:
-- **Funcionário:** acesso a informações básicas do sistema.
-- **Gerente:** acesso à visualização e gerenciamento de determinados recursos.
-- **Administrador de segurança:** controle total sobre usuários, recursos e informações de segurança.
+- **Funcionário:** visualiza seus próprios dados e relatórios básicos.
+- **Gerente:** além da visualização, pode cadastrar e editar recursos.
+- **Administrador de segurança:** acesso completo, capaz de gerenciar usuários, recursos e incidentes.
+
+O comportamento real destes perfis depende do código do backend que autentica e autoriza as requisições.
+
+*(os perfis são ilustrativos; a lógica de permissão está aguardando implementação no servidor)*
 
 ## Estrutura do projeto
 
@@ -77,10 +87,10 @@ IN-WAYNETECH_SECUREACCESS/
 
 ### `app/db/`
 
-Contém os arquivos relacionados ao banco de dados da aplicação.
+Scripts SQL do banco de dados usados no protótipo.
 
-- `schema.sql`: responsável pela criação da estrutura do banco de dados.
-- `seed.sql`: responsável pela inserção de dados iniciais para testes ou uso do sistema.
+- `schema.sql` cria as tabelas de usuários, recursos, incidentes etc.
+- `seed.sql` insere registros de exemplo para testes e demonstrações.
 
 ### `static/`
 
@@ -104,19 +114,16 @@ Contém as páginas HTML da aplicação.
 - `new_incident.html`: cadastro de novos incidentes.
 - `security.html`: área relacionada à segurança do sistema.
 
-## Tecnologias utilizadas
+## Tecnologias presentes
 
-As tecnologias exatas podem variar de acordo com a implementação final, mas este projeto se caracteriza como uma aplicação web full stack com integração entre interface, backend e banco de dados, conforme exigido pelo enunciado.
+Os artefatos contidos aqui são responsáveis pela camada de apresentação e pelo banco de dados:
 
-Tecnologias presentes na estrutura do projeto:
+- HTML (templates das páginas)
+- CSS (estilos em `static/css/`)
+- SQL (scripts de `schema` e `seed`)
+- Imagens e arquivos estáticos
 
-- HTML
-- CSS
-- SQL
-- Templates HTML para renderização das páginas
-- Banco de dados relacional
-
-> Se desejar, você pode complementar esta seção com o backend que usou, por exemplo: Flask, Node.js, PHP ou outro.
+O servidor web e a lógica de backend estão implementados no arquivo `app.py`, que usa Flask e PyMySQL para conectar‑se à base de dados. Basta instalar as dependências listadas na seção seguinte e executar `python app.py` para iniciar o protótipo.
 
 ## Requisitos do projeto atendidos
 
@@ -130,18 +137,26 @@ Com base no enunciado, o sistema foi desenvolvido para atender aos seguintes req
 - Protótipo funcional com integração entre frontend e backend.
 - Entrega com código-fonte e documentação detalhada.
 
-## Como executar o projeto
+## Como executar o protótipo
 
-> **Importante:** ajuste esta seção de acordo com a tecnologia backend que você utilizou.
+1. Clone o repositório na sua máquina.
+2. Instale Python 3.10+ e crie um ambiente virtual (opcional).
+3. Instale as dependências:
+   ```bash
+   pip install flask pymysql
+   ```
+4. Crie o banco de dados e rode `app/db/schema.sql` e `app/db/seed.sql` (o `app.py`
+   já está configurado para se conectar a `localhost`/`root` sem senha; ajuste
+   conforme necessário).
+5. Execute o servidor:
+   ```bash
+   python app.py
+   ```
+6. Abra `http://localhost:5000` no navegador e teste as telas de login, registro
+   e dashboard.
 
-Passos gerais para execução:
-
-1. Clone este repositório.
-2. Acesse a pasta do projeto.
-3. Configure o banco de dados utilizando os scripts `schema.sql` e `seed.sql`.
-4. Instale as dependências do backend, caso existam.
-5. Inicie o servidor da aplicação.
-6. Acesse o sistema no navegador pelo endereço configurado localmente.
+> O backend Flask serve as rotas e os templates; não é necessário montar outro
+servidor adicional.
 
 ## Fluxo básico de uso
 
